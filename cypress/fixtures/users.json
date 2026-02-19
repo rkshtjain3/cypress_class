@@ -1,0 +1,10 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "+91 9876543210",
+    "course": "Cypress Automation Testing",
+    "message": "I am interested in learning Cypress automation testing."
+  }
+]
