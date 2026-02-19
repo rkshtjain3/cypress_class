@@ -6,5 +6,29 @@
     "phone": "+91 9876543210",
     "course": "Cypress Automation Testing",
     "message": "I am interested in learning Cypress automation testing."
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "phone": "+91 9876543211",
+    "course": "Selenium WebDriver",
+    "message": "Looking forward to mastering Selenium automation."
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "email": "michael.johnson@example.com",
+    "phone": "+91 9876543212",
+    "course": "API Testing with Postman",
+    "message": "Want to learn API testing and automation techniques."
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Williams",
+    "email": "sarah.williams@example.com",
+    "phone": "+91 9876543213",
+    "course": "Performance Testing",
+    "message": "Interested in performance and load testing tools."
   }
 ]
