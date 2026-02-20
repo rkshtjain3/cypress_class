@@ -7,6 +7,7 @@ const { getFirstName,
     getSubmitButton, submitForm } = require("../pages/homePage");
 
 describe("Homepage Form Tests", () => {
+    let usersValue = '';
     
     beforeEach(function () { 
         cy.openHome();
@@ -17,9 +18,19 @@ describe("Homepage Form Tests", () => {
         cy.get('form').should('be.visible');
     });
 
-    it("Verify all form fields are present", () => {
-        getFirstName().should('be.visible');
-        getLastName().should('be.visible');
+    it.only("Verify all form fields are present", async function() {
+        let userName1 = '';
+        cy.env(['userName', 'password']).then(function ({userName, password}) { 
+            usersValue = userName;
+            cy.log('env', userName);
+        })
+        
+
+
+
+        cy.log('usernameee',Cypress.env('userName'))
+        getFirstName().type(Cypress.env('userName'));
+        getLastName().should('be.visible').type(cy.env('password'));
         getEmail().should('be.visible');
         getPhone().should('be.visible');
         getCourse().should('be.visible');
@@ -42,7 +53,7 @@ describe("Homepage Form Tests", () => {
         });
     });
 
-    it.only("Verify form submission with valid data", function () {
+    it("Verify form submission with valid data", function () {
         let data=this.usersData
 
         for (let i = 0; i < this.usersData.length; i++) { 
@@ -59,4 +70,5 @@ describe("Homepage Form Tests", () => {
         cy.get('input[name="email"]:invalid').should('exist');
         cy.get('input[name="phone"]:invalid').should('exist');
     });
+
 });
