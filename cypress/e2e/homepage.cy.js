@@ -18,19 +18,22 @@ describe("Homepage Form Tests", () => {
         cy.get('form').should('be.visible');
     });
 
-    it.only("Verify all form fields are present", async function() {
-        let userName1 = '';
-        cy.env(['userName', 'password']).then(function ({userName, password}) { 
-            usersValue = userName;
-            cy.log('env', userName);
-        })
+    it.only("Verify all form fields are present",function() {
+        //let userName1 = '';
+        /*cy.env(['userName', 'password']).then(function ({userName, password}) { 
+            //usersValue = userName;
+            //cy.log('env', userName);
+        })*/
         
 
-
+//use Cypress.env, it is synchronous and hence give result straight away
+//if we use cy.env() we need to use .then() as it is asynchronous as it returns results later
+//Also for cy.env(), we need to add the values as as array
+//Also use allowCypressEnv: true, in config file inside defineconfig
 
         cy.log('usernameee',Cypress.env('userName'))
         getFirstName().type(Cypress.env('userName'));
-        getLastName().should('be.visible').type(cy.env('password'));
+        getLastName().should('be.visible').type(Cypress.env('password'));
         getEmail().should('be.visible');
         getPhone().should('be.visible');
         getCourse().should('be.visible');

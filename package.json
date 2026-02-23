@@ -6,13 +6,17 @@
   "scripts": {
     "open": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run:stage": "cypress run --config-file stage.config.js"
+    "run:stage": "cypress run --config-file stage.config.js",
+   "open:stage": "cypress open --config-file stage.config.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^15.10.0",
+    "cypress": "^15.10.0"
+  },
+  "devDependencies": {
     "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
